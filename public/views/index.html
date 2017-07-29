@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="utf-8">
+  <title>Full Stack Challenge</title>
+  <script type="text/javascript" src="vendors/angular.min.js" charset="utf-8"></script>
+  <script type="text/javascript" src="scripts/EmployeeController.js" charset="utf-8"></script>
+  <script type="text/javascript" src="scripts/EmployeeService.js" charset="utf-8"></script>
+  <link rel="stylesheet" href="styles/main.css">
+</head>
+
+<body ng-app="myApp">
+  <h1>Employee Information Sheet</h1>
+  <div ng-controller="EmployeeController as ec">
+    <div class="row" >
+      <input type="text" name="employee-name" ng-model="ec.name" placeholder="Enter Employee Name">
+      <input type="text" name="employee-position" ng-model="ec.position" placeholder="Enter Employee Position">
+      <input type="text" name="employee-income" ng-model="ec.income" placeholder="Enter Employee Income">
+      <button class="addBtn" ng-click="ec.addEmployee()">Add Employee</button>
+    </div>
+    <div class="container" ng-init="ec.getEmployee()">
+
+      <p> Total Employee Salary: <span id="info">$0.00</span></p>
+      <p ng-repeat="employees in ec.employee">
+        {{employees.name | uppercase}} {{employees.position}} {{employees.income | currency}}
+        <button class="deleteBtn" ng-click='ec.deleteEmployee(employees)'>Fire</button>
+      </p>
+    </div>
+  </div>
+  </div>
+</body>
+
+</html>
