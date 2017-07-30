@@ -1,16 +1,20 @@
 body {
   font-family: courier;
   background-color: white;
+  text-align: center;
 }
+
 div {
   font-family: courier;
   margin-left: 3%;
 }
+
 h1 {
   color: #000080;
   font-family: arial;
   margin-left: 2%;
 }
+
 h2 {
   color: black;
   font-family: arial;
@@ -30,7 +34,6 @@ p {
   background-color: #7AE582;
   border-radius: 10px;
 }
-
 
 .deleteBtn {
 background-color: red;

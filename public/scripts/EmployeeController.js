@@ -10,15 +10,14 @@ myApp.controller('EmployeeController', function(EmployeeService) {
       position: vm.position,
       income: vm.income
     };
-    vm.name = '';
-    vm.position = '';
-    vm.income = '';
-
     console.log('in controller sending:', newEmployee);
     EmployeeService.addEmployee(newEmployee).then(function() {
       console.log('back in controller after adding employee');
       vm.getEmployee();
     });
+    vm.name = '';
+    vm.position = '';
+    vm.income = '';
   }; // end addEmployee
 
 
