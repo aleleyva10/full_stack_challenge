@@ -21,7 +21,7 @@
     </div>
     <div class="container" ng-init="ec.getEmployee()">
 
-      <p> Total Employee Salary: <span id="info">$0.00</span></p>
+      <p class="salary"> Total Employee Salary: <span id="info">$0.00</span></p>
       <p ng-repeat="employees in ec.employee">
         {{employees.name | uppercase}} {{employees.position}} {{employees.income | currency}}
         <button class="deleteBtn" ng-click='ec.deleteEmployee(employees)'>Fire</button>
