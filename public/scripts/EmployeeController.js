@@ -27,10 +27,9 @@ myApp.controller('EmployeeController', function(EmployeeService) {
     console.log('in controller, getEmployee');
     EmployeeService.getEmployee().then(function() {
       vm.employee = EmployeeService.data;
-
       console.log('back in controller with:', vm.employee);
       vm.updateSalary(vm.employee);
-      
+
     });
   }; // end getEmployee
 
@@ -43,11 +42,11 @@ myApp.controller('EmployeeController', function(EmployeeService) {
   }; // end deleteEmployee
 
 
-  vm.updateSalary = function(arr){
+  vm.updateSalary = function(arr) {
     console.log('in update');
     vm.salary = 0;
     console.log('back in controller with:', arr);
-    for(var i = 0; i < arr.length; i++){
+    for (var i = 0; i < arr.length; i++) {
       vm.salary += arr[i].income;
       console.log('income');
     }
