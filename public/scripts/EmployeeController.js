@@ -14,7 +14,7 @@ myApp.controller('EmployeeController', function(EmployeeService) {
     EmployeeService.addEmployee(newEmployee).then(function() {
       console.log('back in controller after adding employee');
       vm.getEmployee();
-      vm.updateSalary();
+      // vm.updateSalary();
     });
     vm.name = '';
     vm.position = '';
@@ -31,21 +31,21 @@ myApp.controller('EmployeeController', function(EmployeeService) {
   }; // end getEmployee
 
 
-  vm.deleteEmployee = function(employee){
+  vm.deleteEmployee = function(employee) {
     console.log('in delete', employee);
     EmployeeService.deleteEmployee(employee._id).then(function() {
       vm.getEmployee();
-      vm.updateSalary();
+      //  vm.updateSalary();
     });
   }; // end deleteEmployee
 
 
-  vm.updateSalary = function(newSalary) {
-    for (var i = 0; i < vm.employee.length; i++){
-      if(vm.employee[i].id === selectedEmployee) {
-        vm.employee[i].salary =  newSalary;
-      }
-    }
-  };
+  // vm.updateSalary = function(newSalary) {
+  //   for (var i = 0; i < vm.employee.length; i++){
+  //     if(vm.employee[i].id === selectedEmployee) {
+  //       vm.employee[i].salary =  newSalary;
+  //     }
+  //   }
+  // };
 
 }); // end controller
