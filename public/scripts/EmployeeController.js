@@ -27,13 +27,10 @@ myApp.controller('EmployeeController', function(EmployeeService) {
     console.log('in controller, getEmployee');
     EmployeeService.getEmployee().then(function() {
       vm.employee = EmployeeService.data;
-      // vm.salary = 0;
+
       console.log('back in controller with:', vm.employee);
       vm.updateSalary(vm.employee);
-      // for (var i = 0; i < vm.employee.length; i++) {
-      //   vm.salary += vm.employee[i].income;
-      //   console.log('income');
-      // }
+      
     });
   }; // end getEmployee
 
